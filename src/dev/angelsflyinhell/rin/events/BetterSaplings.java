@@ -19,6 +19,7 @@ public class BetterSaplings implements Listener {
             int r = new Random().nextInt(2);
             if(r == 0) {
                 loc.getBlock().setType(event.getEntity().getItemStack().getType());
+                event.getEntity().remove();
             }
         }
     }
