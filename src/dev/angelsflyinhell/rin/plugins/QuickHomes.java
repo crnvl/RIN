@@ -29,7 +29,7 @@ public class QuickHomes implements CommandExecutor {
             int playerHomes = 0;
             for (int i = 0; i < QHSave.getKeySize(); i++) {
                 String key = QHSave.properties.keySet().toArray()[i].toString();
-                if(key.startsWith(String.valueOf(player.getUniqueId()))) {
+                if(key.startsWith(String.valueOf(player.getUniqueId())) && !QHSave.getValue(key).equals("DELETED")) {
                     playerHomes++;
                 }
             }
