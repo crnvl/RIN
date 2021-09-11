@@ -45,11 +45,12 @@ public class QuickHomes implements CommandExecutor {
             player.sendMessage(ConsoleUtils.PREFIX + "Set Home Point: " + args[0]);
         }
 
-        if (command.getName().equalsIgnoreCase("delhomes")) {
+        if (command.getName().equalsIgnoreCase("delhome")) {
             String key = player.getUniqueId() + "home" + args[0];
             if (QHSave.propExist(key)) {
                 QHSave.addKey(key, "DELETED");
                 player.sendMessage(ConsoleUtils.PREFIX + "Deleted Home Point: " + args[0]);
+                return true;
             }
             player.sendMessage(ConsoleUtils.PREFIX + "Couldn't find Home Point \"" + args[0] + "\"");
         }
@@ -60,7 +61,7 @@ public class QuickHomes implements CommandExecutor {
             int playerHomes = 0;
             for (int i = 0; i < QHSave.getKeySize(); i++) {
                 String key = QHSave.properties.keySet().toArray()[i].toString();
-                if (key.startsWith(String.valueOf(player.getUniqueId()))) {
+                if (key.startsWith(String.valueOf(player.getUniqueId())) && !Objects.equals(QHSave.getValue(key), "DELETED")) {
                     playerHomes++;
                     String outKey = key.replace(player.getUniqueId() + "home", "");
                     player.sendMessage(ConsoleUtils.PREFIX + (playerHomes) + ". " + outKey);

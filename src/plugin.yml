@@ -11,7 +11,7 @@ commands:
   delhome:
     description: Delete a Home Point from your Home Point list.
     usage: /<command> <name>
-    aliases: [ dh, del0h, dhome ]
+    aliases: [ dh, delh, dhome ]
   homes:
     description: View a list of all Home Points owned by you.
     usage: /<command>
