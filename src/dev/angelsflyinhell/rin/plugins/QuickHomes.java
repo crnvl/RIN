@@ -22,7 +22,7 @@ public class QuickHomes implements CommandExecutor {
 
         if (command.getName().equalsIgnoreCase("sethome")) {
 
-            if (args[0].equals("")) {
+            if (!(args[0].length() >= 1)) {
                 player.sendMessage(ConsoleUtils.PREFIX + "Home Point cannot be empty.");
             }
 
@@ -56,11 +56,14 @@ public class QuickHomes implements CommandExecutor {
 
         if (command.getName().equalsIgnoreCase("homes")) {
             player.sendMessage(ConsoleUtils.PREFIX + "Your Homes: ");
+
+            int playerHomes = 0;
             for (int i = 0; i < QHSave.getKeySize(); i++) {
                 String key = QHSave.properties.keySet().toArray()[i].toString();
                 if (key.startsWith(String.valueOf(player.getUniqueId()))) {
+                    playerHomes++;
                     String outKey = key.replace(player.getUniqueId() + "home", "");
-                    player.sendMessage(ConsoleUtils.PREFIX + (i + 1) + ". " + outKey);
+                    player.sendMessage(ConsoleUtils.PREFIX + (playerHomes) + ". " + outKey);
                 }
             }
         }
