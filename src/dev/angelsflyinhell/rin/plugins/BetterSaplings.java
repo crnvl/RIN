@@ -1,4 +1,4 @@
-package dev.angelsflyinhell.rin.events;
+package dev.angelsflyinhell.rin.plugins;
 
 import org.bukkit.Location;
 import org.bukkit.event.EventHandler;
