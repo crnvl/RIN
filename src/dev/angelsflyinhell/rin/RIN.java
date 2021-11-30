@@ -4,6 +4,7 @@ import dev.angelsflyinhell.rin.plugins.BetterSaplings;
 import dev.angelsflyinhell.rin.plugins.QuickHomes;
 import dev.angelsflyinhell.rin.tools.ConsoleUtils;
 import dev.angelsflyinhell.rin.tools.RINConfig;
+import dev.angelsflyinhell.rin.tools.props.QHSave;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -30,6 +31,7 @@ public class RIN extends JavaPlugin {
         }
 
         if(Objects.equals(RINConfig.getValue("quickhomes"), "true")) {
+            QHSave.init();
             Objects.requireNonNull(getCommand("sethome")).setExecutor(new QuickHomes());
             Objects.requireNonNull(getCommand("delhome")).setExecutor(new QuickHomes());
             Objects.requireNonNull(getCommand("homes")).setExecutor(new QuickHomes());
