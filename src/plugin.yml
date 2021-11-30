@@ -1,7 +1,7 @@
 name: RIN
 main: dev.angelsflyinhell.rin.RIN
 author: angelsflyinhell
-version: 1.1.0
+version: 1.1.1
 api-version: 1.14
 commands:
   sethome:

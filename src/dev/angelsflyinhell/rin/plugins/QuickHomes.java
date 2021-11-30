@@ -34,7 +34,7 @@ public class QuickHomes implements CommandExecutor {
                 }
             }
 
-            if (RINConfig.propExist("quickhomesLimit") && Integer.parseInt(RINConfig.getValue("quickhomesLimit"))<=playerHomes) {
+            if (Integer.parseInt(RINConfig.getValue("quickhomesLimit"))<=playerHomes) {
                 player.sendMessage(ConsoleUtils.PREFIX + "Home Point couldn't be set: Exceeds limit of " + RINConfig.getValue("quickhomesLimit"));
                 return true;
             }
